@@ -15,7 +15,7 @@ namespace laba1
             // ПЕРВОЕ ЗАДАНИЕ
 
             string type;
-            char choose1, choose2, choose3, choose4, choose5, choose6;
+            char choose1, choose2, choose3, choose4, choose5, choose6, choose22;
 
             // 1-а
             Console.WriteLine("Задание 1-a"+"\n"+"Хотите ли вы заполнить переменные вручную? y - да, n - нет");
@@ -269,7 +269,8 @@ namespace laba1
 
                         if (!e1.HasValue) // возвращает true, если объект Nullable хранит некоторое значение
                         {
-                            Console.WriteLine("e1 is a null!");
+                            e1 = 35;
+                            Console.WriteLine("e1 is a null!. Присвоили значение этой переменной. Теперь е1 -> " + e1);
                         }
                         else { Console.WriteLine("e1 isn't a null!"); }
 
@@ -298,6 +299,152 @@ namespace laba1
                         Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 1-f\n");
 
                         Console.WriteLine("var f1 = 543;\nМы не можем присвоить данной переменной значение другого типа, например, символ. Единственное отличие неявно типизированной переменной от обычной,\nявно типизированной переменной, — в способе определения ее типа. Как только этот тип будет определен, он закрепляется за переменной до конца ее существования.\n\n\t\tКОНЕЦ ПЕРВОГО ЗАДАНИЯ");
+                    }
+
+
+
+                    ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 2-a
+
+
+
+                    Console.WriteLine("\nПереходить ли на задание 2-a? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                    type = Console.ReadLine();
+                    choose22 = Convert.ToChar(type);
+                    if (choose22 == 'y')
+                    {
+                        Console.Clear();
+
+                        Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 2-a\n");
+
+                        string s22 = "It's me, MARIO!", s221 = "uKRAINE";
+
+                        Console.WriteLine("Первая строка -> "+s22+", вторая строка -> "+s221+"\n");
+
+                        if(s22==s221)
+                        {
+                            Console.WriteLine("Строки идентичины");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Строки не идентичины");
+                        }
+                    }
+
+
+
+                    ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 2-b
+
+
+
+                    Console.WriteLine("\nПереходить ли на задание 2-b? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                    type = Console.ReadLine();
+                    choose22 = Convert.ToChar(type);
+                    if (choose22 == 'y')
+                    {
+                        Console.Clear();
+
+                        Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 2-b\n");
+
+                        string temporary;
+                        string s222 = "Azino777";
+                        string s22 = "It's me, MARIO!", s221 = "uKRAINE";
+
+                        Console.WriteLine("Даны три строки:\nПервая -> "+s22+", вторая -> "+s221+", третья -> "+s222+"\n");
+
+
+                        s22 += s221 + s222;
+                        Console.WriteLine("1) Сцепление трёх строк: "+s22+"\n\n");
+
+
+                        temporary = String.Copy(s221);
+                        Console.WriteLine("2) Копирование строки s221 = uKRAINE в строку temporary. temporary -> "+temporary+"\n\n");
+
+
+                        Console.WriteLine("3) Выделение подстроки. Из строки temporary выделели подстроку, которая начинается со второго символа -> "+ temporary.Substring(1, 6)+"\n\n");
+
+
+                        string text = "Я разделяю строкууууу на словаааа";
+                        Console.WriteLine("4) Разделение строки. Дана строка с названием text -> "+text+"\n");
+                        string[] words = text.Split(' ');   // массив разделителей, по которым разбивается текст на слова
+                        Console.WriteLine("Строка была разделена на слова:\n");
+                        foreach(string ll in words)         /*Оператор цикла foreach действует следующим образом. Когда цикл начинается, первый элемент массива выбирается и присваивается переменной цикла.*/                           
+                        {                                   /*На каждом последующем шаге итерации выбирается следующий элемент массива, который сохраняется в переменной цикла.*/ 
+                            Console.WriteLine(ll+"\n");     /*Цикл завершается, когда все элементы массива окажутся выбранными.*/
+                        }
+
+
+                        text = "Я шагаю по столу ";
+                        string text1 = "как Назарбаев в Астану";
+                        Console.WriteLine("\n5) Вставка строки в другую строку в заданную позицию.\nДаны две строки: 1-я строка ->"+text+", 2-я -> "+text1+"\n");
+                        text = text.Insert(17, text1);      // первым параметром в функции Insert является индекс, по которому надо вставлять подстроку, а второй параметр - собственно подстрока.
+                        Console.WriteLine("Итоговая строка: "+text+"\n\n");
+
+
+                        Console.WriteLine("6) Удаление заданной подстроки.\nДана строка -> "+text1+"\n");
+                        text1 = text1.Remove(0, 4);
+                        Console.WriteLine("Удалили слово *как *. Итог -> "+ text1+"\n\n");
+
+
+                        Console.WriteLine("7) Интерполяция строк.\n");
+                        int w1 = 8, w2 = 33;
+                        Console.WriteLine($"Если сложить числа {w1} и {w2} - будет {w1+w2}.");
+                    }
+
+
+
+                    ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 2-c
+
+
+
+                    Console.WriteLine("\nПереходить ли на задание 2-c? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                    type = Console.ReadLine();
+                    choose22 = Convert.ToChar(type);
+                    if (choose22 == 'y')
+                    {
+                        Console.Clear();
+
+                        Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 2-c\n");
+
+                        string name = null;
+                        string ff = "Вроде бы что-то есть...";
+
+                        bool test = String.IsNullOrEmpty(name); // возвращает значение true, если параметр value равен null или пустой текст ""
+                        if (test)
+                        {
+                            Console.WriteLine("Строка пустая");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Строка не пустая");
+                        }
+
+                        Console.WriteLine("\nДана строка -> "+ff+"\nСейчас в неё я скопирую null-строку:\n");
+                        ff = String.Copy(name);
+                        Console.WriteLine("Результат -> "+name);
+                    }
+
+
+
+                    ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 2-d
+
+
+
+                    Console.WriteLine("\nПереходить ли на задание 2-d? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                    type = Console.ReadLine();
+                    choose22 = Convert.ToChar(type);
+                    if (choose22 == 'y')
+                    {
+                        Console.Clear();
+
+                        Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 2-d\n");
+
+                        StringBuilder hello = new StringBuilder("Привет, меня зовут Василевич Владимир", 140);
+                        Console.WriteLine(hello+"\n");
+                        hello.Remove(9, 4);
+                        Console.WriteLine(hello+"\n");
+                        hello.Insert(0, "xxx");
+                        hello.Insert(37, "xxx");
+                        Console.WriteLine(hello+ "\n\n\t\tКОНЕЦ ВТОРОГО ЗАДАНИЯ");
                     }
                 }
             }
@@ -521,7 +668,8 @@ namespace laba1
 
                             if (!e1.HasValue) // возвращает true, если объект Nullable хранит некоторое значение
                             {
-                                Console.WriteLine("e1 is a null!");
+                                e1 = 35;
+                                Console.WriteLine("e1 is a null!. Присвоили значение этой переменной. Теперь е1 -> " + e1);
                             }
                             else { Console.WriteLine("e1 isn't a null!"); }
 
@@ -550,6 +698,152 @@ namespace laba1
                             Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 1-f\n");
 
                             Console.WriteLine("var f1 = 543;\nМы не можем присвоить данной переменной значение другого типа, например, символ. Единственное отличие неявно типизированной переменной от обычной,\nявно типизированной переменной, — в способе определения ее типа. Как только этот тип будет определен, он закрепляется за переменной до конца ее существования.\n\n\t\tКОНЕЦ ПЕРВОГО ЗАДАНИЯ");
+                        }
+
+
+
+                        ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 2-a
+
+
+
+                        Console.WriteLine("\nПереходить ли на задание 2-a? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                        type = Console.ReadLine();
+                        choose22 = Convert.ToChar(type);
+                        if (choose22 == 'y')
+                        {
+                            Console.Clear();
+
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 2-a\n");
+
+                            string s22 = "It's me, MARIO!", s221 = "uKRAINE";
+
+                            Console.WriteLine("Первая строка -> " + s22 + ", вторая строка -> " + s221 + "\n");
+
+                            if (s22 == s221)
+                            {
+                                Console.WriteLine("Строки идентичины");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Строки не идентичины");
+                            }
+                        }
+
+
+
+                        ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 2-b
+
+
+
+                        Console.WriteLine("\nПереходить ли на задание 2-b? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                        type = Console.ReadLine();
+                        choose22 = Convert.ToChar(type);
+                        if (choose22 == 'y')
+                        {
+                            Console.Clear();
+
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 2-b\n");
+
+                            string temporary;
+                            string s222 = "Azino777";
+                            string s22 = "It's me, MARIO!", s221 = "uKRAINE";
+
+                            Console.WriteLine("Даны три строки:\nПервая -> " + s22 + ", вторая -> " + s221 + ", третья -> " + s222 + "\n");
+
+
+                            s22 += s221 + s222;
+                            Console.WriteLine("1) Сцепление трёх строк: " + s22 + "\n\n");
+
+
+                            temporary = String.Copy(s221);
+                            Console.WriteLine("2) Копирование строки s221 = uKRAINE в строку temporary. temporary -> " + temporary + "\n\n");
+
+
+                            Console.WriteLine("3) Выделение подстроки. Из строки temporary выделели подстроку, которая начинается со второго символа -> " + temporary.Substring(1, 6) + "\n\n");
+
+
+                            string text = "Я разделяю строкууууу на словаааа";
+                            Console.WriteLine("4) Разделение строки. Дана строка с названием text -> " + text + "\n");
+                            string[] words = text.Split(' ');   // массив разделителей, по которым разбивается текст на слова
+                            Console.WriteLine("Строка была разделена на слова:\n");
+                            foreach (string ll in words)         /*Оператор цикла foreach действует следующим образом. Когда цикл начинается, первый элемент массива выбирается и присваивается переменной цикла.*/
+                            {                                   /*На каждом последующем шаге итерации выбирается следующий элемент массива, который сохраняется в переменной цикла.*/
+                                Console.WriteLine(ll + "\n");     /*Цикл завершается, когда все элементы массива окажутся выбранными.*/
+                            }
+
+
+                            text = "Я шагаю по столу ";
+                            string text1 = "как Назарбаев в Астану";
+                            Console.WriteLine("\n5) Вставка строки в другую строку в заданную позицию.\nДаны две строки: 1-я строка ->" + text + ", 2-я -> " + text1 + "\n");
+                            text = text.Insert(17, text1);      // первым параметром в функции Insert является индекс, по которому надо вставлять подстроку, а второй параметр - собственно подстрока.
+                            Console.WriteLine("Итоговая строка: " + text + "\n\n");
+
+
+                            Console.WriteLine("6) Удаление заданной подстроки.\nДана строка -> " + text1 + "\n");
+                            text1 = text1.Remove(0, 4);
+                            Console.WriteLine("Удалили слово *как *. Итог -> " + text1 + "\n\n");
+
+
+                            Console.WriteLine("7) Интерполяция строк.\n");
+                            int w1 = 8, w2 = 33;
+                            Console.WriteLine($"Если сложить числа {w1} и {w2} - будет {w1 + w2}.");
+                        }
+
+
+
+                        ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 2-c
+
+
+
+                        Console.WriteLine("\nПереходить ли на задание 2-c? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                        type = Console.ReadLine();
+                        choose22 = Convert.ToChar(type);
+                        if (choose22 == 'y')
+                        {
+                            Console.Clear();
+
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 2-c\n");
+
+                            string name = null;
+                            string ff = "Вроде бы что-то есть...";
+
+                            bool test = String.IsNullOrEmpty(name); // возвращает значение true, если параметр value равен null или пустой текст ""
+                            if (test)
+                            {
+                                Console.WriteLine("Строка пустая");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Строка не пустая");
+                            }
+
+                            Console.WriteLine("\nДана строка -> " + ff + "\nСейчас в неё я скопирую null-строку:\n");
+                            ff = String.Copy(name);
+                            Console.WriteLine("Результат -> " + name);
+                        }
+
+
+
+                        ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 2-d
+
+
+
+                        Console.WriteLine("\nПереходить ли на задание 2-d? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                        type = Console.ReadLine();
+                        choose22 = Convert.ToChar(type);
+                        if (choose22 == 'y')
+                        {
+                            Console.Clear();
+
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 2-d\n");
+
+                            StringBuilder hello = new StringBuilder("Привет, меня зовут Василевич Владимир", 140);
+                            Console.WriteLine(hello + "\n");
+                            hello.Remove(9, 4);
+                            Console.WriteLine(hello + "\n");
+                            hello.Insert(0, "xxx");
+                            hello.Insert(37, "xxx");
+                            Console.WriteLine(hello + "\n\n\t\tКОНЕЦ ВТОРОГО ЗАДАНИЯ");
                         }
                     }
                 }
