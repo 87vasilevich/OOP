@@ -199,7 +199,7 @@ namespace laba1
                     l = (short)c;
                     Console.WriteLine("l = (short)c\t" + "l = " + l + " -> " + l.GetType());
 
-
+                }
 
                     ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 1-с
 
@@ -440,13 +440,135 @@ namespace laba1
 
                         StringBuilder hello = new StringBuilder("Привет, меня зовут Василевич Владимир", 140);
                         Console.WriteLine(hello+"\n");
-                        hello.Remove(9, 4);
+                        hello.Remove(9, 4); // удаляет 4 элемента, начиная с 9 позиции
                         Console.WriteLine(hello+"\n");
                         hello.Insert(0, "xxx");
                         hello.Insert(37, "xxx");
                         Console.WriteLine(hello+ "\n\n\t\tКОНЕЦ ВТОРОГО ЗАДАНИЯ");
                     }
+
+
+
+                    ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 3-a
+
+
+
+                    Console.WriteLine("\nПереходить ли на задание 3-a? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                    type = Console.ReadLine();
+                    choose22 = Convert.ToChar(type);
+                    if (choose22 == 'y')
+                    {
+                        Console.Clear();
+
+                        Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 3-a\n");
+                        int[,] mas = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+                        int rows = mas.GetUpperBound(0) + 1;
+                        int columns = mas.Length / rows;
+                        for (int q = 0; q < rows; i++)
+                        {
+                            for (int j = 0; j < columns; j++)
+                            {
+                                Console.Write($"{mas[q, j]} \t");
+                            }
+                            Console.WriteLine();
+                        }
+                    }
+
+
+
+                    ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 3-b
+
+
+
+                    Console.WriteLine("\nПереходить ли на задание 3-b? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                    type = Console.ReadLine();
+                    choose22 = Convert.ToChar(type);
+                    if (choose22 == 'y')
+                    {
+                        Console.Clear();
+
+                        Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 3-b\n");
+                        string[] massive = new string[4] { "1st string", "2nd string", "3rd string", "4th string" };
+                        foreach(string oo in massive)
+                        {
+                            Console.WriteLine(oo+"\n");
+                        }
+                        Console.WriteLine("Размерность массива - "+massive.Length+"\n");
+
+                        string position;
+                        int pose;
+                        Console.WriteLine("Введите номер элемента массива, который вы хотите заменить (от 0 до 3):");
+                        position = Console.ReadLine();
+                        pose = Convert.ToInt32(position);
+                        massive[pose]= Console.ReadLine();
+                        Console.WriteLine("Изменённый массив\n");
+                        foreach (string oo in massive)
+                        {
+                            Console.WriteLine(oo + "\n");
+                        }
+
+                    }
+
+
+
+                ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 3-c
+
+
+
+                Console.WriteLine("\nПереходить ли на задание 3-c? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                type = Console.ReadLine();
+                choose22 = Convert.ToChar(type);
+                if (choose22 == 'y')
+                {
+                    Console.Clear();
+                    Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 3-c\n");
+                    float[][] masc = new float[3][];
+                    masc[0] = new float[2];
+                    masc[1] = new float[3];
+                    masc[2] = new float[4];
+                    Console.WriteLine("Введите значения элементов массива:");
+                    int roows = 1, cools = 0;
+                    for (int iroows = 0; iroows < 3; iroows++)
+                    {
+                        masc[iroows][cools] = Convert.ToSingle(Console.ReadLine());
+                        roows++;
+                        cools++;
+                    }
+                    cools = 0;
+                    for (int iroows = 0; iroows < 3; iroows++)
+                    {
+                        foreach(int element in masc[iroows])
+                        {
+                            Console.WriteLine($"{masc[iroows][cools]} ");
+                            cools++;
+                        }
+                        Console.WriteLine();
+                        roows++;
+                        cools = 0;
+                    }
                 }
+
+
+
+                ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 3-a
+
+
+
+                Console.WriteLine("\nПереходить ли на задание 3-d? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                type = Console.ReadLine();
+                choose22 = Convert.ToChar(type);
+                if (choose22 == 'y')
+                {
+                    Console.Clear();
+
+                    Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 3-d\n");
+                    var masssivchik = new [] { "stroke1", "stroke2", "stroke3" };
+                    var stroka = "stroke4";
+                }
+
+
+
+
             }
             // 2-я версия развития событий 
             else
@@ -844,6 +966,33 @@ namespace laba1
                             hello.Insert(0, "xxx");
                             hello.Insert(37, "xxx");
                             Console.WriteLine(hello + "\n\n\t\tКОНЕЦ ВТОРОГО ЗАДАНИЯ");
+                        }
+
+
+
+                        ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 3-a
+
+
+
+                        Console.WriteLine("\nПереходить ли на задание 3-a? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                        type = Console.ReadLine();
+                        choose22 = Convert.ToChar(type);
+                        if (choose22 == 'y')
+                        {
+                            Console.Clear();
+
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 3-a\n");
+                            int[,] mas = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+                            int rows = mas.GetUpperBound(0) + 1;
+                            int columns = mas.Length / rows;
+                            for (int q = 0; q < rows; i++)
+                            {
+                                for (int j = 0; j < columns; j++)
+                                {
+                                    Console.Write($"{mas[q, j]} \t");
+                                }
+                                Console.WriteLine();
+                            }
                         }
                     }
                 }
