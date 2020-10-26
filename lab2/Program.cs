@@ -550,7 +550,7 @@ namespace laba1
 
 
 
-                ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 3-a
+                ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 3-d
 
 
 
@@ -562,13 +562,53 @@ namespace laba1
                     Console.Clear();
 
                     Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 3-d\n");
-                    var masssivchik = new [] { "stroke1", "stroke2", "stroke3" };
-                    var stroka = "stroke4";
+                    var massss = new[] { "Stroke1", "Strokeee2", "stroke3" };
+                    var stroks = "dnendnefuri";
+                    Console.WriteLine("\n\n\t\tКОНЕЦ ТРЕТЬЕГО ЗАДАНИЯ");
                 }
 
 
 
+                ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 4-a, b, c
 
+
+
+                Console.WriteLine("\nПереходить ли на задание 4-a, b? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                type = Console.ReadLine();
+                choose22 = Convert.ToChar(type);
+                if (choose22 == 'y')
+                {
+                    Console.Clear();
+                    Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 4-a, b\n");
+
+                    (int, string, char, string, ulong) tuple = (3, "Tom", 's', "Dog", 1243432);
+                    Console.WriteLine($"Все элементы кортежа: { tuple.Item1}, {tuple.Item2}, {tuple.Item3}, {tuple.Item4}, {tuple.Item5}, {tuple.Item5}");
+                    Console.WriteLine($"2, 4 и 5 элементы: {tuple.Item2}, {tuple.Item4}, {tuple.Item5}");
+                    int valuuue = tuple.Item1;
+                    (int ooone, string twooo, char threeee, _, _) = tuple;
+                    
+                }
+
+
+
+                ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 4-d
+
+
+
+                Console.WriteLine("\nПереходить ли на задание 4-d? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                type = Console.ReadLine();
+                choose22 = Convert.ToChar(type);
+                if (choose22 == 'y')
+                {
+                    Console.Clear();
+                    Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 4-d\n");
+
+                    var firsttt = (3, 16);
+                    var firsddd = (3, 16);
+                    int sravne = firsttt.CompareTo(firsddd);
+                    Console.WriteLine($"\nСравнение кортежей (0 - равны, 1 - не равны): {sravne}");
+                    Console.WriteLine("\n\n\t\tКОНЕЦ ЧЕТВЁРТОГО ЗАДАНИЯ");
+                }
             }
             // 2-я версия развития событий 
             else
