@@ -418,9 +418,9 @@ namespace laba1
                             Console.WriteLine("Строка не пустая");
                         }
 
-                        Console.WriteLine("\nДана строка -> "+ff+"\nСейчас в неё я скопирую null-строку:\n");
-                        ff = String.Copy(name);
-                        Console.WriteLine("Результат -> "+name);
+                        //Console.WriteLine("\nДана строка -> "+ff+"\nСейчас в неё я скопирую null-строку:\n");
+                        //ff = String.Copy(name);
+                        //Console.WriteLine("Результат -> "+name);
                     }
 
 
@@ -443,7 +443,7 @@ namespace laba1
                         hello.Remove(9, 4); // удаляет 4 элемента, начиная с 9 позиции
                         Console.WriteLine(hello+"\n");
                         hello.Insert(0, "xxx");
-                        hello.Insert(37, "xxx");
+                        hello.Insert(hello.Length, "xxx");
                         Console.WriteLine(hello+ "\n\n\t\tКОНЕЦ ВТОРОГО ЗАДАНИЯ");
                     }
 
@@ -464,13 +464,13 @@ namespace laba1
                         int[,] mas = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
                         int rows = mas.GetUpperBound(0) + 1;
                         int columns = mas.Length / rows;
-                        for (int q = 0; q < rows; i++)
+                        for (int q = 0; q < rows; ++q)
                         {
                             for (int j = 0; j < columns; j++)
                             {
                                 Console.Write($"{mas[q, j]} \t");
                             }
-                            Console.WriteLine();
+                            Console.WriteLine("\n");
                         }
                     }
 
@@ -526,30 +526,38 @@ namespace laba1
                     masc[0] = new float[2];
                     masc[1] = new float[3];
                     masc[2] = new float[4];
-                    Console.WriteLine("Введите значения элементов массива:");
-                    int roows = 1, cools = 0;
-                    for (int iroows = 0; iroows < 3; iroows++)
+
+                    for (int z = 0; z < 2; ++z)
                     {
-                        masc[iroows][cools] = Convert.ToSingle(Console.ReadLine());
-                        roows++;
-                        cools++;
+                        Console.Write($"Введите {z + 1} вещественное число для 1 массива: ");
+                        masc[0][z] = Convert.ToSingle(Console.ReadLine());
                     }
-                    cools = 0;
-                    for (int iroows = 0; iroows < 3; iroows++)
+                    for (int z = 0; z < 3; ++z)
                     {
-                        foreach(int element in masc[iroows])
+                        Console.Write($"Введите {z + 1} вещественное число для 2 массива: ");
+                        masc[1][z] = Convert.ToSingle(Console.ReadLine());
+                    }
+                    for (int z = 0; z < 4; ++z)
+                    {
+                        Console.Write($"Введите {z + 1} вещественное число для 3 массива: ");
+                        masc[2][z] = Convert.ToSingle(Console.ReadLine());
+                    }
+
+
+                    for (int z = 0; z < masc.Length; ++z)
+                    {
+                        for (int j = 0; j < masc[z].Length; ++j)
                         {
-                            Console.WriteLine($"{masc[iroows][cools]} ");
-                            cools++;
+                            Console.Write(masc[z][j]);
                         }
                         Console.WriteLine();
-                        roows++;
-                        cools = 0;
+
+
+
                     }
+
+
                 }
-
-
-
                 ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 3-d
 
 
@@ -609,6 +617,85 @@ namespace laba1
                     Console.WriteLine($"\nСравнение кортежей (0 - равны, 1 - не равны): {sravne}");
                     Console.WriteLine("\n\n\t\tКОНЕЦ ЧЕТВЁРТОГО ЗАДАНИЯ");
                 }
+
+
+
+                ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 5-6
+
+
+
+                Console.WriteLine("\nПереходить ли на задание 5? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                type = Console.ReadLine();
+                choose22 = Convert.ToChar(type);
+                if (choose22 == 'y')
+                {
+                    Console.Clear();
+                    Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 5\n");
+                    int[] someArrForFunc = { 3, 5, 6, 4, 2, 43, 5, 0, 1 };
+                    string someStringForFunc = "Hsd ksdjjsh sjkdhj skjdhsd";
+                    Console.Write($"Массив - ");
+                    for (int tt = 0; tt < someArrForFunc.Length; ++tt)
+                    {
+                        Console.Write(someArrForFunc[tt] + " ");
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine($"Строка - {someStringForFunc}");
+                    (int max, int min, int summ, char letter) = someFunc(someArrForFunc, someStringForFunc);
+                    Console.WriteLine($"Максимальный элемент массива - {max}\n" +
+                        $"Минимальный элемент массива - {min}\n" +
+                        $"Сумма элементов массива - {summ}\n" +
+                        $"Первый символ строки - {letter}");
+
+                    Console.WriteLine("\n\n\t\tКОНЕЦ ПЯТОГО ЗАДАНИЯ");
+
+                    Console.ReadKey();
+                    Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 6\n");
+                    Console.WriteLine($"Используя unchecked - {maxIntNumber2()}");
+                    Console.WriteLine($"Используя checked - {maxIntNumber1()}");
+                    Console.WriteLine("\n\n\t\tКОНЕЦ ШЕСТОГО ЗАДАНИЯ");
+
+
+                    
+                }
+                static (int, int, int, char) someFunc(int[] arr, string str)
+                {
+                    int max = arr[0];
+                    int min = arr[0];
+                    int summ = 0;
+                    char letter = str[0];
+
+                    for (int i = 0; i < arr.Length; ++i)
+                    {
+                        if (arr[i] > max)
+                        {
+                            max = arr[i];
+                        }
+                        if (arr[i] < min)
+                        {
+                            min = arr[i];
+                        }
+
+                        summ += arr[i];
+                    }
+
+                    return (max, min, summ, letter);
+                }
+                static int maxIntNumber1()
+                {
+                    int seven = 7;
+                    int number = checked(2_147_483_647 + seven);
+
+                    return number;
+                }
+
+                static int maxIntNumber2()
+                {
+                    int seven = 7;
+                    int number = unchecked(2_147_483_647 + seven);
+
+                    return number;
+                }
+
             }
             // 2-я версия развития событий 
             else
@@ -979,9 +1066,9 @@ namespace laba1
                                 Console.WriteLine("Строка не пустая");
                             }
 
-                            Console.WriteLine("\nДана строка -> " + ff + "\nСейчас в неё я скопирую null-строку:\n");
-                            ff = String.Copy(name);
-                            Console.WriteLine("Результат -> " + name);
+                            //Console.WriteLine("\nДана строка -> " + ff + "\nСейчас в неё я скопирую null-строку:\n");
+                            //ff = String.Copy(name);
+                            //Console.WriteLine("Результат -> " + name);
                         }
 
 
@@ -1004,7 +1091,7 @@ namespace laba1
                             hello.Remove(9, 4);
                             Console.WriteLine(hello + "\n");
                             hello.Insert(0, "xxx");
-                            hello.Insert(37, "xxx");
+                            hello.Insert(hello.Length, "xxx");
                             Console.WriteLine(hello + "\n\n\t\tКОНЕЦ ВТОРОГО ЗАДАНИЯ");
                         }
 
@@ -1025,14 +1112,238 @@ namespace laba1
                             int[,] mas = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
                             int rows = mas.GetUpperBound(0) + 1;
                             int columns = mas.Length / rows;
-                            for (int q = 0; q < rows; i++)
+                            for (int q = 0; q < rows; q++)
                             {
                                 for (int j = 0; j < columns; j++)
                                 {
                                     Console.Write($"{mas[q, j]} \t");
                                 }
-                                Console.WriteLine();
+                                Console.WriteLine("\n");
                             }
+                        }
+
+
+
+                        ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 3-b
+
+
+
+                        Console.WriteLine("\nПереходить ли на задание 3-b? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                        type = Console.ReadLine();
+                        choose22 = Convert.ToChar(type);
+                        if (choose22 == 'y')
+                        {
+                            Console.Clear();
+
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 3-b\n");
+                            string[] massive = new string[4] { "1st string", "2nd string", "3rd string", "4th string" };
+                            foreach (string oo in massive)
+                            {
+                                Console.WriteLine(oo + "\n");
+                            }
+                            Console.WriteLine("Размерность массива - " + massive.Length + "\n");
+
+                            string position;
+                            int pose;
+                            Console.WriteLine("Введите номер элемента массива, который вы хотите заменить (от 0 до 3):");
+                            position = Console.ReadLine();
+                            pose = Convert.ToInt32(position);
+                            massive[pose] = Console.ReadLine();
+                            Console.WriteLine("Изменённый массив\n");
+                            foreach (string oo in massive)
+                            {
+                                Console.WriteLine(oo + "\n");
+                            }
+
+                        }
+
+
+
+                        ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 3-c
+
+
+
+                        Console.WriteLine("\nПереходить ли на задание 3-c? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                        type = Console.ReadLine();
+                        choose22 = Convert.ToChar(type);
+                        if (choose22 == 'y')
+                        {
+                            Console.Clear();
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 3-c\n");
+                            float[][] masc = new float[3][];
+                            masc[0] = new float[2];
+                            masc[1] = new float[3];
+                            masc[2] = new float[4];
+
+                            for (int z = 0; z < 2; ++z)
+                            {
+                                Console.Write($"Введите {z + 1} вещественное число для 1 массива: ");
+                                masc[0][z] = Convert.ToSingle(Console.ReadLine());
+                            }
+                            for (int z = 0; z < 3; ++z)
+                            {
+                                Console.Write($"Введите {z + 1} вещественное число для 2 массива: ");
+                                masc[1][z] = Convert.ToSingle(Console.ReadLine());
+                            }
+                            for (int z = 0; z < 4; ++z)
+                            {
+                                Console.Write($"Введите {z + 1} вещественное число для 3 массива: ");
+                                masc[2][z] = Convert.ToSingle(Console.ReadLine());
+                            }
+
+
+                            for (int z = 0; z < masc.Length; ++z)
+                            {
+                                for (int j = 0; j < masc[z].Length; ++j)
+                                {
+                                    Console.Write(masc[z][j]);
+                                }
+                                Console.WriteLine();
+
+
+
+                            }
+                        }
+
+
+
+                        ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 3-d
+
+
+
+                        Console.WriteLine("\nПереходить ли на задание 3-d? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                        type = Console.ReadLine();
+                        choose22 = Convert.ToChar(type);
+                        if (choose22 == 'y')
+                        {
+                            Console.Clear();
+
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 3-d\n");
+                            var massss = new[] { "Stroke1", "Strokeee2", "stroke3" };
+                            var stroks = "dnendnefuri";
+                            Console.WriteLine("\n\n\t\tКОНЕЦ ТРЕТЬЕГО ЗАДАНИЯ");
+                        }
+
+
+
+                        ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 4-a, b, c
+
+
+
+                        Console.WriteLine("\nПереходить ли на задание 4-a, b? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                        type = Console.ReadLine();
+                        choose22 = Convert.ToChar(type);
+                        if (choose22 == 'y')
+                        {
+                            Console.Clear();
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 4-a, b\n");
+
+                            (int, string, char, string, ulong) tuple = (3, "Tom", 's', "Dog", 1243432);
+                            Console.WriteLine($"Все элементы кортежа: { tuple.Item1}, {tuple.Item2}, {tuple.Item3}, {tuple.Item4}, {tuple.Item5}, {tuple.Item5}");
+                            Console.WriteLine($"2, 4 и 5 элементы: {tuple.Item2}, {tuple.Item4}, {tuple.Item5}");
+                            int valuuue = tuple.Item1;
+                            (int ooone, string twooo, char threeee, _, _) = tuple;
+
+                        }
+
+
+
+                        ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 4-d
+
+
+
+                        Console.WriteLine("\nПереходить ли на задание 4-d? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                        type = Console.ReadLine();
+                        choose22 = Convert.ToChar(type);
+                        if (choose22 == 'y')
+                        {
+                            Console.Clear();
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 4-d\n");
+
+                            var firsttt = (3, 16);
+                            var firsddd = (3, 16);
+                            int sravne = firsttt.CompareTo(firsddd);
+                            Console.WriteLine($"\nСравнение кортежей (0 - равны, 1 - не равны): {sravne}");
+                            Console.WriteLine("\n\n\t\tКОНЕЦ ЧЕТВЁРТОГО ЗАДАНИЯ");
+                        }
+
+
+
+                        ///////////////////////////////////////////////////////////////////////// ЗАДАНИЕ 5-6
+                        
+
+
+                        Console.WriteLine("\nПереходить ли на задание 5? y - да (тогда экран очистится). Если хотите оставаться на этом задании, то ничего не нажимайте.");
+                        type = Console.ReadLine();
+                        choose22 = Convert.ToChar(type);
+                        if (choose22 == 'y')
+                        {
+                            Console.Clear();
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 5\n");
+                            int[] someArrForFunc = { 3, 5, 6, 4, 2, 43, 5, 0, 1 };
+                            string someStringForFunc = "Hsd ksdjjsh sjkdhj skjdhsd";
+                            Console.Write($"Массив - ");
+                            for (int tt = 0; tt < someArrForFunc.Length; ++tt)
+                            {
+                                Console.Write(someArrForFunc[tt] + " ");
+                            }
+                            Console.WriteLine();
+                            Console.WriteLine($"Строка - {someStringForFunc}");
+                            (int max, int min, int summ, char letter) = someFunc(someArrForFunc, someStringForFunc);
+                            Console.WriteLine($"Максимальный элемент массива - {max}\n" +
+                                $"Минимальный элемент массива - {min}\n" +
+                                $"Сумма элементов массива - {summ}\n" +
+                                $"Первый символ строки - {letter}");
+
+                            Console.WriteLine("\n\n\t\tКОНЕЦ ПЯТОГО ЗАДАНИЯ");
+
+                            Console.ReadKey();
+                            Console.WriteLine("////////////////////////////////////////////////\n\nЗадание 6\n");
+                            Console.WriteLine($"Используя unchecked - {maxIntNumber2()}");
+                            Console.WriteLine($"Используя checked - {maxIntNumber1()}");
+                            Console.WriteLine("\n\n\t\tКОНЕЦ ШЕСТОГО ЗАДАНИЯ");
+
+
+
+                           
+                        }
+                        static (int, int, int, char) someFunc(int[] arr, string str)
+                        {
+                            int max = arr[0];
+                            int min = arr[0];
+                            int summ = 0;
+                            char letter = str[0];
+
+                            for (int i = 0; i < arr.Length; ++i)
+                            {
+                                if (arr[i] > max)
+                                {
+                                    max = arr[i];
+                                }
+                                if (arr[i] < min)
+                                {
+                                    min = arr[i];
+                                }
+
+                                summ += arr[i];
+                            }
+
+                            return (max, min, summ, letter);
+                        }
+                        static int maxIntNumber1()
+                        {
+                            int seven = 7;
+                            int number = checked(2_147_483_647 + seven);
+
+                            return number;
+                        }
+
+                        static int maxIntNumber2()
+                        {
+                            int seven = 7;
+                            int number = unchecked(2_147_483_647 + seven);
+
+                            return number;
                         }
                     }
                 }
